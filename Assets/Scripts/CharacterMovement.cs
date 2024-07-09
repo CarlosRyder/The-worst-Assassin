@@ -6,10 +6,10 @@ public class CharacterMovement : MonoBehaviour
 {
     private Rigidbody playerRigidbody;
     private float movX, movZ;
-    public float degrees;
-    public float speed;
-    public float jumpForce;
-    public float fallMultiplier; 
+    public float degrees = 2;
+    public float speed = 4;
+    public float jumpForce = 6;
+    public float fallMultiplier = 1; 
     private bool isJumping;
     private Vector3 movement;
 
