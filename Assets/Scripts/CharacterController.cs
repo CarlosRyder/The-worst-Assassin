@@ -6,13 +6,13 @@ public class CharacterController : MonoBehaviour
     public Transform projectileStartPosition;
     private bool canShoot = true;
     public Rigidbody characterRigibody;
-    public PauseManager pauseManager;
+    private PauseManager pauseManager;
 
     private void Start()
     {
         Rigidbody characterRigibody = GetComponent<Rigidbody>();
-        characterRigibody.constraints = RigidbodyConstraints.FreezeRotation; 
-        pauseManager = FindObjectOfType<PauseManager>();
+        characterRigibody.constraints = RigidbodyConstraints.FreezeRotation;
+        pauseManager = GameObject.Find("Canvas").GetComponent<PauseManager>();
     }
     void Update()
     {
@@ -24,11 +24,6 @@ public class CharacterController : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && canShoot)
         {
             ShootProjectile();
-        }
-
-        if(pauseManager == null) 
-        {
-            PauseManager.GameDefined("Dock Thing");
         }
     }
 

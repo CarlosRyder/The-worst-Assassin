@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - Sword
   - RestartPlatform
+  - WinRoom
   layers:
   - Default
   - TransparentFX

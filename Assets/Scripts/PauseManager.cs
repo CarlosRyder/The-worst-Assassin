@@ -46,7 +46,7 @@ public class PauseManager : MonoBehaviour
         return isPaused;
     }
 
-    public static void GameDefined(string nameScene) 
+    public void GameDefined(string nameScene) 
     {
         SceneManager.LoadScene(nameScene);
     }

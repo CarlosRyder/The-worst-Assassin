@@ -14,11 +14,14 @@ public class CharacterMovement : MonoBehaviour
     private bool isJumping;
     private Vector3 movement;
     public Animator animator;
+    public PauseManager pauseManager;
+
 
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        pauseManager = GameObject.Find("Canvas").GetComponent<PauseManager>();
     }
 
     void Update()
@@ -51,7 +54,7 @@ public class CharacterMovement : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("RestartPlatform")) 
         {
-            PauseManager.GameDefined("Dock Thing");
+            pauseManager.GameDefined("Dock Thing");
         }
     }
 
