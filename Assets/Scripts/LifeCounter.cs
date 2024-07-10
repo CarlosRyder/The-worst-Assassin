@@ -4,9 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class LifeCounter : MonoBehaviour
 {
-    public int lives = 5; 
+    public int lives = 3; 
     public TextMeshProUGUI livesText; 
     public GameObject gameOverPanel; 
+
 
     void Start()
     {
@@ -27,19 +28,31 @@ public class LifeCounter : MonoBehaviour
             gameOverPanel.SetActive(true);
         }
     }
-
-    public void GainLife()
-    {
-        lives++; 
-        UpdateLivesText(); 
+    
+    private void OnCollisionEnter(Collision collision){
+        if (collision.gameObject.CompareTag("WinRoom") 
+            )
+        {
+            WinGame();
+        }
     }
+    
 
     void UpdateLivesText(){
         livesText.text = "    : " + lives; 
     }
+    private void OnTriggerEnter(Collider coll)
+    {
+        if (coll.CompareTag("Enemy")) 
+        {
+            GameObject canvas = GameObject.Find("Canvas"); 
+            LifeCounter lifeCounter = canvas.GetComponent<LifeCounter>();
+            lifeCounter.LoseLife(); 
+        }
+    }
     private void OnCollisionEnter(Collision collision){
-        if (collision.gameObject.CompareTag("Saw") || collision.gameObject.CompareTag("Arrow") || collision.gameObject.CompareTag("Shuriken")
-            || collision.gameObject.CompareTag("Windmill") || collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Enemy")
+            )
         {
             GameObject canvas = GameObject.Find("Canvas"); 
             LifeCounter lifeCounter = canvas.GetComponent<LifeCounter>();
