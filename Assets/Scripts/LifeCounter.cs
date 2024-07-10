@@ -29,13 +29,7 @@ public class LifeCounter : MonoBehaviour
         }
     }
     
-    private void OnCollisionEnter(Collision collision){
-        if (collision.gameObject.CompareTag("WinRoom") 
-            )
-        {
-            WinGame();
-        }
-    }
+    
     
 
     void UpdateLivesText(){
