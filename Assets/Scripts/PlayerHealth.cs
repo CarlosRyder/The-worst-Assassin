@@ -20,10 +20,10 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter(Collider coll)
     {
-        if (coll.CompareTag("sword")) 
-        {
-            LoseLife();
-        }
+        //if (coll.CompareTag("sword")) 
+        //{
+        //    LoseLife();
+        //}
     }
 
     private void Update()
