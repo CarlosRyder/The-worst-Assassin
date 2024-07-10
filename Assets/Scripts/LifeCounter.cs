@@ -35,10 +35,11 @@ public class LifeCounter : MonoBehaviour
     }
 
     void UpdateLivesText(){
-        livesText.text = "Lifes: " + lives; 
+        livesText.text = "    : " + lives; 
     }
-    void OnCollisionEnter2D(Collision2D collision){
-        if (collision.gameObject.CompareTag("Saw") || collision.gameObject.CompareTag("Arrow") || collision.gameObject.CompareTag("Shuriken") || collision.gameObject.CompareTag("Windmill"))
+    private void OnCollisionEnter(Collision collision){
+        if (collision.gameObject.CompareTag("Saw") || collision.gameObject.CompareTag("Arrow") || collision.gameObject.CompareTag("Shuriken")
+            || collision.gameObject.CompareTag("Windmill") || collision.gameObject.CompareTag("Enemy"))
         {
             GameObject canvas = GameObject.Find("Canvas"); 
             LifeCounter lifeCounter = canvas.GetComponent<LifeCounter>();
