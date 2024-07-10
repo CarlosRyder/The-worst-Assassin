@@ -1,16 +1,18 @@
 using UnityEngine;
-using TMPro; 
+using TMPro;
 using UnityEngine.SceneManagement;
+using static Cinemachine.DocumentationSortingAttribute;
 
 public class LifeCounter : MonoBehaviour
 {
-    public int lives = 5; 
-    public TextMeshProUGUI livesText; 
-    public GameObject gameOverPanel; 
+    public int lives = 5;
+    public TextMeshProUGUI livesText;
+    public GameObject gameOverPanel;
+
 
     void Start()
     {
-        UpdateLivesText(); 
+        //UpdateLivesText();
         gameOverPanel.SetActive(false);
     }
 
@@ -18,31 +20,41 @@ public class LifeCounter : MonoBehaviour
     {
         if (lives > 0)
         {
-            lives--; 
-            UpdateLivesText(); 
+            lives--;
+            //UpdateLivesText();
         }
 
-        if (lives <= 0)
+        if (lives <1)
         {
             gameOverPanel.SetActive(true);
         }
     }
-
-    public void GainLife()
+    private void Update()
     {
-        lives++; 
-        UpdateLivesText(); 
+        Debug.Log("Lives: " + lives);
     }
 
-    void UpdateLivesText(){
-        livesText.text = "Lifes: " + lives; 
-    }
-    void OnCollisionEnter2D(Collision2D collision){
-        if (collision.gameObject.CompareTag("Saw") || collision.gameObject.CompareTag("Arrow") || collision.gameObject.CompareTag("Shuriken") || collision.gameObject.CompareTag("Windmill"))
+    //void UpdateLivesText()
+    //{
+    //    livesText.text = "    : " + lives;
+    //}
+    private void OnTriggerEnter(Collider coll)
+    {
+        if (coll.CompareTag("Enemy"))
         {
-            GameObject canvas = GameObject.Find("Canvas"); 
+            GameObject canvas = GameObject.Find("Canvas");
             LifeCounter lifeCounter = canvas.GetComponent<LifeCounter>();
-            lifeCounter.LoseLife(); 
+            LoseLife();
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Enemy")
+            )
+        {
+            GameObject canvas = GameObject.Find("Canvas");
+            LifeCounter lifeCounter = canvas.GetComponent<LifeCounter>();
+            LoseLife();
         }
     }
     public void RestartGame()
