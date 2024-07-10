@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -47,6 +48,10 @@ public class CharacterMovement : MonoBehaviour
         {
             isJumping = false;
             animator.SetBool("IsJumping", isJumping);
+        }
+        if (collision.gameObject.CompareTag("RestartPlatform")) 
+        {
+            PauseManager.GameDefined("Dock Thing");
         }
     }
 

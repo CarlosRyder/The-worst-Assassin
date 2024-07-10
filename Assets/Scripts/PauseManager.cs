@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
@@ -44,4 +45,10 @@ public class PauseManager : MonoBehaviour
     {
         return isPaused;
     }
+
+    public static void GameDefined(string nameScene) 
+    {
+        SceneManager.LoadScene(nameScene);
+    }
+
 }

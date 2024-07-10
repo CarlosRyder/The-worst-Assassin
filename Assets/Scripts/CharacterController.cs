@@ -6,7 +6,7 @@ public class CharacterController : MonoBehaviour
     public Transform projectileStartPosition;
     private bool canShoot = true;
     public Rigidbody characterRigibody;
-    private PauseManager pauseManager;
+    public PauseManager pauseManager;
 
     private void Start()
     {
@@ -24,6 +24,11 @@ public class CharacterController : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && canShoot)
         {
             ShootProjectile();
+        }
+
+        if(pauseManager == null) 
+        {
+            PauseManager.GameDefined("Dock Thing");
         }
     }
 
