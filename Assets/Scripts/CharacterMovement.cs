@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -13,11 +14,14 @@ public class CharacterMovement : MonoBehaviour
     private bool isJumping;
     private Vector3 movement;
     public Animator animator;
+    public PauseManager pauseManager;
+
 
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        pauseManager = GameObject.Find("Canvas").GetComponent<PauseManager>();
     }
 
     void Update()
@@ -47,6 +51,10 @@ public class CharacterMovement : MonoBehaviour
         {
             isJumping = false;
             animator.SetBool("IsJumping", isJumping);
+        }
+        if (collision.gameObject.CompareTag("RestartPlatform")) 
+        {
+            pauseManager.GameDefined("Dock Thing");
         }
     }
 

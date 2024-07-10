@@ -11,8 +11,8 @@ public class CharacterController : MonoBehaviour
     private void Start()
     {
         Rigidbody characterRigibody = GetComponent<Rigidbody>();
-        characterRigibody.constraints = RigidbodyConstraints.FreezeRotation; 
-        pauseManager = FindObjectOfType<PauseManager>();
+        characterRigibody.constraints = RigidbodyConstraints.FreezeRotation;
+        pauseManager = GameObject.Find("Canvas").GetComponent<PauseManager>();
     }
     void Update()
     {

@@ -11,15 +11,16 @@ public class WinGame : MonoBehaviour
     {
         winPanel.SetActive(false);
     }
-    private void OnCollisionEnter(Collision collision){
-        if (collision.gameObject.CompareTag("WinRoom") 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("WinRoom")
             )
         {
-            WinGame();
+            WinGamePanel();
         }
     }
 
-    public void WinGame()
+    public void WinGamePanel()
     {
         winPanel.SetActive(true);
     }
