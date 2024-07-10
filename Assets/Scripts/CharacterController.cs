@@ -6,14 +6,21 @@ public class CharacterController : MonoBehaviour
     public Transform projectileStartPosition;
     private bool canShoot = true;
     public Rigidbody characterRigibody;
+    private PauseManager pauseManager;
 
     private void Start()
     {
         Rigidbody characterRigibody = GetComponent<Rigidbody>();
         characterRigibody.constraints = RigidbodyConstraints.FreezeRotation; 
+        pauseManager = FindObjectOfType<PauseManager>();
     }
     void Update()
     {
+        if (pauseManager.IsPaused()) 
+        {
+        return;
+        }
+
         if (Input.GetMouseButtonDown(0) && canShoot)
         {
             ShootProjectile();
