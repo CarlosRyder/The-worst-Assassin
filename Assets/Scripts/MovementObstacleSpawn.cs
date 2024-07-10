@@ -3,7 +3,7 @@ using UnityEngine;
 public class MovementObstacleSpawn : MonoBehaviour
 {
     public float speed;
-    public float limitRight = 4.968f;
+    public float limitRight = 29.54f;
     // Start is called before the first frame update
     void Start()
     {
