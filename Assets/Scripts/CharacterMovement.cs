@@ -44,11 +44,13 @@ public class CharacterMovement : MonoBehaviour
     {
         if (movement.magnitude > 0)
         {
+            
             Vector3 move = transform.position + movement * Time.deltaTime * speed;
             playerRigidbody.MovePosition(move);
+        
 
-            Quaternion targetRotation = Quaternion.LookRotation(movement, Vector3.up);
-            playerRigidbody.MoveRotation(Quaternion.RotateTowards(transform.rotation, targetRotation, degrees * Time.deltaTime));
+            //Quaternion targetRotation = Quaternion.LookRotation(movement, Vector3.up);
+            //playerRigidbody.MoveRotation(Quaternion.RotateTowards(transform.rotation, targetRotation, degrees * Time.deltaTime));
         }
         else
         {
