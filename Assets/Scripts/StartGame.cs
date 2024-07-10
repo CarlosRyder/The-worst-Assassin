@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class StartGame : MonoBehaviour
 {
-    public GameObject panel; 
+    public GameObject startPanel; 
 
     public void StartGameFunction()
     {
-        panel.SetActive(false); 
+        startPanel.SetActive(false); 
     }
 }
 
