@@ -46,7 +46,7 @@ public class Projectile : MonoBehaviour
     {
         if (!isReturning)
         {
-            transform.Translate(Vector3.forward * forwardSpeed * Time.deltaTime);
+            transform.Translate(Vector3.up * forwardSpeed * Time.deltaTime);
         }
         else
         {
