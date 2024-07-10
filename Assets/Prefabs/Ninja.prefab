@@ -1937,6 +1937,7 @@ GameObject:
   - component: {fileID: 8540344463912255792}
   - component: {fileID: 8540344463912255795}
   - component: {fileID: 8540344463912255794}
+  - component: {fileID: 543450652553263250}
   m_Layer: 0
   m_Name: Ninja
   m_TagString: Untagged
@@ -1988,9 +1989,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.48435783
-  m_Height: 2.5189154
+  m_Height: 2.5550382
   m_Direction: 1
-  m_Center: {x: 0, y: 1.3115019, z: -0.015642166}
+  m_Center: {x: 0, y: 1.2934405, z: -0.015642166}
 --- !u!114 &8540344463912255792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2003,9 +2004,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8c0cdc18a75bc648b2b9a3f3742b1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 2528883722699297849, guid: f8af23208ec773944ae23665a824c27c, type: 3}
-  projectileStartPosition: {fileID: 0}
-  characterRigibody: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  projectileStartPosition: {fileID: 4651673349329144142}
+  characterRigibody: {fileID: 8540344463912255793}
 --- !u!114 &8540344463912255795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2019,9 +2020,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   degrees: 2
-  speed: 4
+  speed: 6
   jumpForce: 6
   fallMultiplier: 1
+  animator: {fileID: 0}
 --- !u!114 &8540344463912255794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2035,6 +2037,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLives: 3
+--- !u!95 &543450652553263250
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8810184206393130438}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 30a69d7d653b43e47806a915aa934d40, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8927923516448152405
 GameObject:
   m_ObjectHideFlags: 0

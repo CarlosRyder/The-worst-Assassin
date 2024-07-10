@@ -12,7 +12,6 @@ public class EnemyRange : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -26,7 +25,6 @@ public class EnemyRange : MonoBehaviour
             ani.SetBool("run", false);
             ani.SetBool("attack", true);
             enemy.attacking = true;
-            GetComponent<CapsuleCollider>().enabled = false;
         }
     }
 }

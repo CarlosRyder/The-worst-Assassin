@@ -9,6 +9,6 @@ public class SawObstacle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.forward * Time.deltaTime, speedRotation);
+        transform.Rotate(Vector3.up * Time.deltaTime, speedRotation);
     }
 }

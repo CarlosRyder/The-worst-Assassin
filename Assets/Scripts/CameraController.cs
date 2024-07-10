@@ -5,9 +5,9 @@ public class CameraController : MonoBehaviour
     public Transform player; 
     public Vector3 offset; 
     public float smoothSpeed = 0.125f; 
-    private float xOffset = 0.19f;
-    private float yOffset = 8.06f;
-    private float zOffset = -9.15f;
+    private float xOffset = -0.5f;
+    private float yOffset = 13.8f;
+    private float zOffset = -12.4f;
 
     private void Start()
     {
