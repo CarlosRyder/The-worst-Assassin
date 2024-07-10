@@ -1923,6 +1923,66 @@ Transform:
   m_Father: {fileID: 1090725050486800554}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -60.42976, y: -14.365614, z: 19.893795}
+--- !u!1 &8748207824267329824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 49390496283724096}
+  - component: {fileID: 2877490695116926548}
+  - component: {fileID: 999045627}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &49390496283724096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8748207824267329824}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.1, z: 1.36}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8146975956911908732}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2877490695116926548
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8748207824267329824}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.4119306, z: 0.5447998}
+  m_Center: {x: 0, y: 0.2190268, z: -0.2276001}
+--- !u!114 &999045627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8748207824267329824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f509b55429e3033459967337d4f6c866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ani: {fileID: 543450652553263250}
+  enemy: {fileID: 8675018681096740469}
 --- !u!1 &8810184206393130438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1957,6 +2017,7 @@ Transform:
   m_Children:
   - {fileID: 4406538225144899338}
   - {fileID: 2901274632593547671}
+  - {fileID: 49390496283724096}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2030,7 +2091,7 @@ MonoBehaviour:
   degrees: 0
   attacking: 0
   target: {fileID: 0}
-  range: {fileID: 0}
+  range: {fileID: 999045627}
 --- !u!1 &8927923516448152405
 GameObject:
   m_ObjectHideFlags: 0
