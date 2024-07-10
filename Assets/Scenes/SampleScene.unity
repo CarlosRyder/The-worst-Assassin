@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 705507994}
+  m_Sun: {fileID: 0}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 527960225}
   - component: {fileID: 527960230}
   - component: {fileID: 527960232}
+  - component: {fileID: 527960233}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -269,6 +270,19 @@ MonoBehaviour:
   projectilePrefab: {fileID: 2528883722699297849, guid: f8af23208ec773944ae23665a824c27c, type: 3}
   projectileStartPosition: {fileID: 527960229}
   characterRigibody: {fileID: 527960230}
+--- !u!114 &527960233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527960224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 040100c3d45b3da4aac289453dfc7368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLives: 3
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
