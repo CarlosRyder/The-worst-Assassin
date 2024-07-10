@@ -18,6 +18,14 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider coll)
+    {
+        if (coll.CompareTag("sword")) 
+        {
+            LoseLife();
+        }
+    }
+
     private void Update()
     {
         Debug.Log("current lives: " + currentLives);
