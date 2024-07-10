@@ -69,7 +69,7 @@ public class Enemy : MonoBehaviour
                 ani.SetBool("walk", false);
 
                 ani.SetBool("run", true);
-                transform.Translate(Vector3.forward * 2 * Time.deltaTime);
+                transform.Translate(Vector3.forward * 3 * Time.deltaTime);
 
                 ani.SetBool("attack", false);
             }
@@ -86,10 +86,10 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void finalAnimation() 
+    public void FinalAnimation() 
     {
         ani.SetBool("attack", false);
         attacking = false;
-        range.GetComponent<CapsuleCollider>().enabled = true;
+        range.GetComponent<BoxCollider>().enabled = true;
     }
 }

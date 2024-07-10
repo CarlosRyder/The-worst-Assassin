@@ -323,7 +323,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -1415271995279602250}
-    m_Position: {x: 340, y: 120, z: 0}
+    m_Position: {x: 310, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6749749438584379419}
     m_Position: {x: 510, y: 330, z: 0}
@@ -514,7 +514,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NinjaAnimationController
+  m_Name: NinjaAnimation
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Speed
