@@ -22,7 +22,7 @@ public class CharacterController : MonoBehaviour
 
     void ShootProjectile()
     {
-        GameObject projectile = Instantiate(projectilePrefab, projectileStartPosition.position, projectilePrefab.transform.rotation);
+        GameObject projectile = Instantiate(projectilePrefab, projectileStartPosition.position, transform.rotation.normalized);
         projectile.GetComponent<Projectile>().Initialize(this);
         canShoot = false;
     }
