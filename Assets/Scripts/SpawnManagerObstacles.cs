@@ -6,7 +6,7 @@ public class SpawnManagerObstacles : MonoBehaviour
 {
     public GameObject prefabObstacles;
     private float spawnDelay = 2;
-    private float spawnInterval = 4f;
+    private float spawnInterval = 0.5f;
     
     void Start()
     {
@@ -20,7 +20,7 @@ public class SpawnManagerObstacles : MonoBehaviour
 
     void SpawnObstacles()
     {
-        Vector3 spawnLocation = new Vector3(-4.59898f, Random.Range(0.37f, 2f), Random.Range(29.72f, 20.6f));
+        Vector3 spawnLocation = new Vector3(-10.41534f, Random.Range(3.34f, 6.58f), Random.Range(47.29936f, 83.63f));
         Instantiate(prefabObstacles, spawnLocation, Quaternion.identity);
     }
 }
