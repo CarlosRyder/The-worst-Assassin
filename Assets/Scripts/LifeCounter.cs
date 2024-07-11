@@ -1,18 +1,17 @@
 using UnityEngine;
-using TMPro;
+using TMPro; 
 using UnityEngine.SceneManagement;
-using static Cinemachine.DocumentationSortingAttribute;
 
 public class LifeCounter : MonoBehaviour
 {
-    public int lives = 5;
-    public TextMeshProUGUI livesText;
-    public GameObject gameOverPanel;
+    public int lives = 3; 
+    public TextMeshProUGUI livesText; 
+    public GameObject gameOverPanel; 
 
 
     void Start()
     {
-        //UpdateLivesText();
+        UpdateLivesText(); 
         gameOverPanel.SetActive(false);
     }
 
@@ -20,41 +19,38 @@ public class LifeCounter : MonoBehaviour
     {
         if (lives > 0)
         {
-            lives--;
-            //UpdateLivesText();
+            lives--; 
+            UpdateLivesText(); 
         }
 
-        if (lives <1)
+        if (lives <= 0)
         {
             gameOverPanel.SetActive(true);
         }
     }
-    private void Update()
-    {
-        Debug.Log("Lives: " + lives);
-    }
+    
+    
+    
 
-    //void UpdateLivesText()
-    //{
-    //    livesText.text = "    : " + lives;
-    //}
+    void UpdateLivesText(){
+        livesText.text = "    : " + lives; 
+    }
     private void OnTriggerEnter(Collider coll)
     {
-        if (coll.CompareTag("Enemy"))
+        if (coll.CompareTag("Enemy")) 
         {
-            GameObject canvas = GameObject.Find("Canvas");
+            GameObject canvas = GameObject.Find("Canvas"); 
             LifeCounter lifeCounter = canvas.GetComponent<LifeCounter>();
-            LoseLife();
+            lifeCounter.LoseLife(); 
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
+    private void OnCollisionEnter(Collision collision){
         if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Enemy")
             )
         {
-            GameObject canvas = GameObject.Find("Canvas");
+            GameObject canvas = GameObject.Find("Canvas"); 
             LifeCounter lifeCounter = canvas.GetComponent<LifeCounter>();
-            LoseLife();
+            lifeCounter.LoseLife(); 
         }
     }
     public void RestartGame()

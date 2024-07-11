@@ -7,12 +7,16 @@ public class CharacterController : MonoBehaviour
     private bool canShoot = true;
     public Rigidbody characterRigibody;
     private PauseManager pauseManager;
+    public AudioClip shurikenSound;
+    private AudioSource playerAudio;
+
 
     private void Start()
     {
         Rigidbody characterRigibody = GetComponent<Rigidbody>();
         characterRigibody.constraints = RigidbodyConstraints.FreezeRotation;
         pauseManager = GameObject.Find("Canvas").GetComponent<PauseManager>();
+        playerAudio = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -31,6 +35,7 @@ public class CharacterController : MonoBehaviour
     {
         GameObject projectile = Instantiate(projectilePrefab, projectileStartPosition.position, transform.rotation.normalized);
         projectile.GetComponent<Projectile>().Initialize(this);
+        playerAudio.PlayOneShot(shurikenSound, 1.0f);
         canShoot = false;
     }
 
