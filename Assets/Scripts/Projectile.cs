@@ -8,15 +8,12 @@ public class Projectile : MonoBehaviour
     private Transform playerTransform;
     private CharacterController characterController;
     private bool isReturning = false;
-    
-
 
     public void Initialize(CharacterController controller)
     {
         characterController = controller;
         playerTransform = controller.transform;
         StartCoroutine(ReturnAfterDelay(1f)); 
-        
     }
 
     void Update()

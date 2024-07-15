@@ -6,7 +6,6 @@ public class WinGame : MonoBehaviour
 {
     public GameObject winPanel; 
 
-    // Start is called before the first frame update
     void Start()
     {
         winPanel.SetActive(false);

@@ -93,9 +93,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2560779881750940355}
   - component: {fileID: 2560779881750940354}
+  - component: {fileID: 7017457292590169082}
+  - component: {fileID: 2827898976871824862}
   m_Layer: 0
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,6 +137,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 9.76
   limitRight: 29.54
+--- !u!65 &7017457292590169082
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2560779881750940357}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.56960434, y: 0.07878416, z: 0.058556747}
+  m_Center: {x: 0.015217185, y: 0.0009670094, z: 0.89584696}
+--- !u!114 &2827898976871824862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2560779881750940357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d73e8127d6a90c43a977b0316a1d548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4948791801266405891
 GameObject:
   m_ObjectHideFlags: 0
