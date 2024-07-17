@@ -5,24 +5,36 @@ public class CharacterController : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform projectileStartPosition;
     private bool canShoot = true;
-    public Rigidbody characterRigibody;
+    private Rigidbody characterRigidbody;
     private PauseManager pauseManager;
     public AudioClip shurikenSound;
     private AudioSource playerAudio;
-
+    private LifeCounter lifeCounter;
 
     private void Start()
     {
-        Rigidbody characterRigibody = GetComponent<Rigidbody>();
-        characterRigibody.constraints = RigidbodyConstraints.FreezeRotation;
-        pauseManager = GameObject.Find("Canvas").GetComponent<PauseManager>();
+        characterRigidbody = GetComponent<Rigidbody>();
+        characterRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+        pauseManager = GameObject.Find("Canvas")?.GetComponent<PauseManager>();
         playerAudio = GetComponent<AudioSource>();
+        lifeCounter = GameObject.Find("Canvas")?.GetComponent<LifeCounter>();
+
+        if (pauseManager == null)
+        {
+            Debug.LogError("PauseManager not found on Canvas object");
+        }
+
+        if (lifeCounter == null)
+        {
+            Debug.LogError("LifeCounter not found on Canvas object");
+        }
     }
+
     void Update()
     {
-        if (pauseManager.IsPaused()) 
+        if (pauseManager != null && pauseManager.IsPaused())
         {
-        return;
+            return;
         }
 
         if (Input.GetMouseButtonDown(0) && canShoot)
@@ -42,5 +54,24 @@ public class CharacterController : MonoBehaviour
     public void SetCanShoot(bool value)
     {
         canShoot = value;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            GameObject canvas = GameObject.Find("Canvas");
+            LifeCounter lifeCounter = canvas.GetComponent<LifeCounter>();
+            lifeCounter.LoseLife();
+        }
+    }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            GameObject canvas = GameObject.Find("Canvas");
+            LifeCounter lifeCounter = canvas.GetComponent<LifeCounter>();
+            lifeCounter.LoseLife();
+        }
     }
 }

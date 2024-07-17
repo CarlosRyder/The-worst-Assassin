@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6719706473300549110}
   - component: {fileID: 7705354372241674835}
   - component: {fileID: 5551282149550139033}
+  - component: {fileID: 7191875703845956825}
   m_Layer: 0
   m_Name: Hazard_Saw
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8314539e68a8fc24ebd98fbcb6aa5443, type: 2}
+  - {fileID: 2100000, guid: 5f05b6631ce1c264dbfa6bffd5693723, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7191875703845956825
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6200016068107863884}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8003897702407966919, guid: 6a1512ec141f79d43afbef818d243344, type: 3}

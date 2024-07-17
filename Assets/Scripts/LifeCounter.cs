@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class LifeCounter : MonoBehaviour
 {
-    public int lives = 3; 
+    public int lives; 
     public TextMeshProUGUI livesText; 
     public GameObject gameOverPanel; 
 
@@ -28,34 +28,8 @@ public class LifeCounter : MonoBehaviour
             gameOverPanel.SetActive(true);
         }
     }
-    
-    
-    
 
     void UpdateLivesText(){
-        livesText.text = "    : " + lives; 
+        livesText.text = "     " + lives; 
     }
-    private void OnTriggerEnter(Collider coll)
-    {
-        if (coll.CompareTag("Enemy")) 
-        {
-            GameObject canvas = GameObject.Find("Canvas"); 
-            LifeCounter lifeCounter = canvas.GetComponent<LifeCounter>();
-            lifeCounter.LoseLife(); 
-        }
-    }
-    private void OnCollisionEnter(Collision collision){
-        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Enemy")
-            )
-        {
-            GameObject canvas = GameObject.Find("Canvas"); 
-            LifeCounter lifeCounter = canvas.GetComponent<LifeCounter>();
-            lifeCounter.LoseLife(); 
-        }
-    }
-    public void RestartGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
 }

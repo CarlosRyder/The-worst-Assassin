@@ -20,7 +20,6 @@ public class Enemy : MonoBehaviour
         target = GameObject.FindWithTag("Player");
     }
 
-    // Update is called once per frame
     void Update()
     {
         EnemyBehavior();

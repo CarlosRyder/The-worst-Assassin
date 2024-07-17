@@ -7,16 +7,6 @@ public class EnemyRange : MonoBehaviour
     public Animator ani;
     public Enemy enemy;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider coll)
     {
         if (coll.CompareTag("Player")) 
