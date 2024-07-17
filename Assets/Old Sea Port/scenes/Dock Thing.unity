@@ -4691,11 +4691,6 @@ Transform:
   m_Father: {fileID: 52880495}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &678708138 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8713774558127240149, guid: e4de779493bcbfb4093a55f41a9758f4, type: 3}
-  m_PrefabInstance: {fileID: 8713774558805946495}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &681779374
 GameObject:
   m_ObjectHideFlags: 0
@@ -11224,6 +11219,7 @@ GameObject:
   - component: {fileID: 1506963551}
   - component: {fileID: 1506963550}
   - component: {fileID: 1506963549}
+  - component: {fileID: 1506963553}
   m_Layer: 0
   m_Name: Platform2
   m_TagString: Ground
@@ -11253,7 +11249,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506963547}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58351c78a2aa33e4a8df51d12bda8f2d, type: 3}
   m_Name: 
@@ -11326,6 +11322,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506963547}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1506963553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506963547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b610c48524825d4d93a64e9d68a5f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1614276489}
+  waypoints:
+  - {fileID: 709146328}
+  - {fileID: 885925822}
+  speedObject: 2
 --- !u!1 &1535253934
 GameObject:
   m_ObjectHideFlags: 0
@@ -11774,6 +11787,7 @@ GameObject:
   - component: {fileID: 1580599968}
   - component: {fileID: 1580599967}
   - component: {fileID: 1580599970}
+  - component: {fileID: 1580599971}
   m_Layer: 0
   m_Name: Platform1
   m_TagString: Ground
@@ -11867,11 +11881,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580599965}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58351c78a2aa33e4a8df51d12bda8f2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 1875670703}
+  - {fileID: 2086130896}
+  speedObject: 2
+--- !u!114 &1580599971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580599965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b610c48524825d4d93a64e9d68a5f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1614276489}
   waypoints:
   - {fileID: 1875670703}
   - {fileID: 2086130896}
@@ -15702,6 +15733,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hazard_Saw
       objectReference: {fileID: 0}
+    - target: {fileID: 6200016068107863884, guid: 8b80fe8553cbfa64c98a8ac48068cbe5, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6719706473300549110, guid: 8b80fe8553cbfa64c98a8ac48068cbe5, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -15806,7 +15841,7 @@ PrefabInstance:
     - target: {fileID: 8540344463912255792, guid: 8fd1702498052ba4087e00c0ab2ade31, type: 3}
       propertyPath: projectilePrefab
       value: 
-      objectReference: {fileID: 678708138}
+      objectReference: {fileID: 8713774558127240149, guid: e4de779493bcbfb4093a55f41a9758f4, type: 3}
     - target: {fileID: 8540344463912255792, guid: 8fd1702498052ba4087e00c0ab2ade31, type: 3}
       propertyPath: characterRigibody
       value: 
@@ -15883,6 +15918,10 @@ PrefabInstance:
     - target: {fileID: 8713774558127240149, guid: e4de779493bcbfb4093a55f41a9758f4, type: 3}
       propertyPath: m_Name
       value: ShurikenPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713774558127240149, guid: e4de779493bcbfb4093a55f41a9758f4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8713774558127240149, guid: e4de779493bcbfb4093a55f41a9758f4, type: 3}
       propertyPath: m_TagString

@@ -8,6 +8,7 @@ public class MovementObstacles : MonoBehaviour
     public float speedObject;
     int waypointsIndex = 0;
 
+   
     void Update()
     {
 
@@ -21,6 +22,6 @@ public class MovementObstacles : MonoBehaviour
         }
         transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointsIndex].transform.position, speedObject * Time.deltaTime);
 
-
     }
+
 }

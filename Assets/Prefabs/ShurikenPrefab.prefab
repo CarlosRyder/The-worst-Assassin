@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4341078526998238121}
   - component: {fileID: 833518319469419532}
   - component: {fileID: 3203668157798656198}
+  - component: {fileID: 486792187433782240}
   m_Layer: 0
   m_Name: Shuriken_18
   m_TagString: Untagged
@@ -84,6 +85,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &486792187433782240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3996183012902308115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 830619b452e0a3c43b8c9e279d88af86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8713774558127240149
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +107,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8713774558127240147}
   - component: {fileID: 8713774558127240148}
-  - component: {fileID: -154792910773106586}
   - component: {fileID: -7018348996233237967}
   m_Layer: 0
   m_Name: ShurikenPrefab
@@ -133,19 +145,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forwardSpeed: 10
   returnSpeed: 10
---- !u!65 &-154792910773106586
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8713774558127240149}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &-7018348996233237967
 CapsuleCollider:
   m_ObjectHideFlags: 0
